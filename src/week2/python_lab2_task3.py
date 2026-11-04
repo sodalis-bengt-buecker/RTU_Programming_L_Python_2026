@@ -36,11 +36,17 @@ def count_operators(expression: str) -> dict[str, int]:
     """Return a dict with the count of each operator in expression."""
     # TODO: initialize the dictionary with all operators set to 0
     # TODO: loop over each character and update the counts
-    raise NotImplementedError("count_operators() is not implemented yet")
+    count = {operator: 0 for operator in OPERATORS}
+    for lasse in expression:
+        if lasse in count:
+            count[lasse] += 1
+    return count
 
 
 if __name__ == "__main__":
     # Keep all input() and print() calls inside this block, otherwise the
     # autograder cannot import your file.
     # TODO: get an expression from the user, count operators, print result
-    pass
+    expression = input("Enter an arithmetic expression: ")
+    operator_counts = count_operators(expression)
+    print(f"Operator counts: {operator_counts}")
